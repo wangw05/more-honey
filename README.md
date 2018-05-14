@@ -45,3 +45,10 @@
     7) library(httr)
 
     8) library(jsonlite)
+
+
+7. What __Major Challenges__ do you anticipate?
+  The challenges we anticipate are the difficulty coming up with a creative way to protray the data.
+
+8. __Questions__ we will be answering
+  The questions we will be answering will be how much the average price of honey is in a state, or which state produces the most honey.
