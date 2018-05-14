@@ -2,7 +2,7 @@
 
 ## Project Description
 
-1. The dataset we will be working with is Honey Production in the USA.  This dataset shows honey production numbers and prices by state from 1998 to 2012.  The data was collected by the **National Agricultural Statistics Service (NASS) of the U.S. Department of Agriculture** and we accessed it using _kaggle.com_.
+1. The dataset we will be working with is [Honey Production in the USA](https://www.kaggle.com/jessicali9530/honey-production/data).  This dataset shows honey production numbers and prices by state from 1998 to 2012.  The data was collected by the **National Agricultural Statistics Service (NASS) of the U.S. Department of Agriculture** and we accessed it using [_kaggle.com_](kaggle.com).
 
 2. Our possible audiences are bee farmers, researchers, people who work in the honey industry, and anyone who might be affected by the rapid decline in honeybee population in 2006, which had lasting effects on the honey industry to this day.  Our target audience is stores and parties that buy honey from the honey farmers and then resell it as this data will be most useful for them.
 
@@ -13,7 +13,7 @@
 
 ## Technical Description
 
-4. The data that we are reading in to do our analysis is formatted in a CSV file. The raw data was provided by [Jessica Li](https://www.kaggle.com/jessicali9530)
+4. The data that we are reading in to do our analysis is formatted in a CSV file. The raw data was provided by [Jessica Li](https://www.kaggle.com/jessicali9530).
 
 5. What types of _data-wrangling_ will you need to do to your data?  
 
@@ -25,8 +25,6 @@
 
     4) filter
 
-    5)
-
 
 6. What _libraries_ will be using in this project?
 
@@ -36,7 +34,7 @@
 
     3) library(dplyr)
 
-    4) ibrary(ggplot2)
+    4) library(ggplot2)
 
     5) library(plotly)
 
@@ -48,7 +46,4 @@
 
 
 7. What __Major Challenges__ do you anticipate?
-  The challenges we anticipate are the difficulty coming up with a creative way to protray the data.
-
-8. __Questions__ we will be answering
-  The questions we will be answering will be how much the average price of honey is in a state, or which state produces the most honey.
+  The challenges we anticipate are the difficulty coming up with a creative way to portray the data.
