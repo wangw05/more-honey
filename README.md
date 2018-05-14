@@ -46,4 +46,5 @@
 
 
 7. What __Major Challenges__ do you anticipate?
+
   The challenges we anticipate are the difficulty coming up with a creative way to portray the data.
