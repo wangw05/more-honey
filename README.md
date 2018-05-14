@@ -6,7 +6,14 @@
 
 2. Our possible audiences are bee farmers, researchers, people who work in the honey industry, and anyone who might be affected by the rapid decline in honeybee population in 2006, which had lasting effects on the honey industry to this day.  Our target audience is stores and parties that buy honey from the honey farmers and then resell it as this data will be most useful for them.
 
+3. The possible questions that we are hoping to answer for the audience is
+- Which state has had the *most* increase in honey production since 1998 to 2012?
+- Which state has the *highest* yield **per colony**?
+- Over the years, which *state* has had the highest financial income from honey? Related, which year has contributed the most value?  
+
 ## Technical Description
+
+4. The data that we are reading in to do our analysis is formatted in a CSV file. The raw data was provided by [Jessica Li](https://www.kaggle.com/jessicali9530)
 
 5. What types of _data-wrangling_ will you need to do to your data?  
 
