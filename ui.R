@@ -1,6 +1,8 @@
 library(shiny)
 library(plotly)
 library(shinythemes)
+library(dplyr)
+
 shinyUI(navbarPage(
   theme = shinytheme("sandstone"),
   "Honey Production in the U.S.",
@@ -45,7 +47,21 @@ shinyUI(navbarPage(
   
   
   tabPanel(
-    "Interactive Plot"
+    "Interactive Plot",
+    sidebarLayout(
+      sidebarPanel(
+        selectInput("state_select",
+                    label = h3("State"),
+                    choices = c(
+                      "Display All" = "all",
+                      distinct(honeyproduction, state)
+                    ),
+                    selected = "all")
+      ),
+      mainPanel(
+        plotOutput("interactive_plot")
+      )
+    )
   ),
   tabPanel(
     "Analysis"
