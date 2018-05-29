@@ -82,7 +82,10 @@ national_yearly_prod <- function(df, yaxis_actual, chart_type) {
     ggplotly(qplot(year, yax, data = df,
           xlab = 'Year', ylab = yaxis_actual, geom = c("point", "smooth"), col = year))
   } else if(chart_type == "violin") {
-    
+    p <- plot_ly(df, x = ~year, y = ~yax, split = ~year, type = 'violin', box = list(visible = T),
+    meanline = list(visible = T)) %>% 
+      layout(xaxis = list(title = "Year"))
+    print(p)
   } else {
     
   }
@@ -90,7 +93,7 @@ national_yearly_prod <- function(df, yaxis_actual, chart_type) {
 }
 
 # Test code remove after testing.
-#national_yearly_prod(df, "Price/Pound", "quant")
+national_yearly_prod(df, "Price/Pound", "violin")
 
 
 # Issues that need resolving:
