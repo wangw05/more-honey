@@ -11,9 +11,11 @@ honeyproduction <-
 #
 
 shinyServer(function(input, output) {
-  output$table <- renderTable({
+  output$table <- renderDataTable({
+    honeyproduction <- rename(honeyproduction, "State" = state, "Number of Colonies" = numcol, "Yield/Colony" = yieldpercol,
+                              "Total Production" = totalprod, "Stocks" = stocks, "Price/lb " = priceperlb, "Production Value" = prodvalue, "Year" = year)
     yearFilter <-
-      subset(honeyproduction, honeyproduction$year == input$selectedYear)
+      subset(honeyproduction, honeyproduction$Year == input$selectedYear)
   })
 
   output$state_yearly_prod <- renderPlotly({

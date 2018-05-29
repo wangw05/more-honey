@@ -135,7 +135,7 @@ shinyUI(navbarPage(
       ),
 
       mainPanel(
-        tableOutput("table")
+        dataTableOutput("table")
       )
     )
   )
