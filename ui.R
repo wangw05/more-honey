@@ -75,7 +75,7 @@ shinyUI(navbarPage(
           label = h3("Included Lines"),
           choices = list(
             "Total Production" = "totalprod",
-            "Stocks" = "stock",
+            "Production Value" = "price",
             "Both" = "all"
           )
         )
