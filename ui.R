@@ -3,6 +3,9 @@ library(plotly)
 library(shinythemes)
 library(dplyr)
 
+honeyproduction <-
+  read.csv("./data/honeyproduction.csv", stringsAsFactors = FALSE)
+
 shinyUI(navbarPage(
   theme = shinytheme("sandstone"),
   "Honey Production in the U.S.",
@@ -63,6 +66,28 @@ shinyUI(navbarPage(
       ),
       mainPanel(
         plotlyOutput("state_yearly_prod")
+      )
+    )
+  ),
+  
+  tabPanel(
+    "Interactive Plot 2",
+    sidebarLayout(
+      sidebarPanel(
+        selectInput("col_input",
+                    label = h3("Variable"),
+                    # ISS: need to change this name. 
+                    choices = list(
+                      "Number of Colonies" = "numcol",
+                      "Yield per Colony" = "yieldpercol",
+                      "Total Production" = "totalprod",
+                      "Price/Pound" = "priceperlb",
+                      "Production Value" = "prodvalue"
+                    )
+        )
+      ),
+      mainPanel(
+        plotlyOutput("national_yearly_prod")
       )
     )
   ),

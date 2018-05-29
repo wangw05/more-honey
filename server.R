@@ -18,4 +18,8 @@ shinyServer(function(input, output) {
   output$state_yearly_prod <- renderPlotly({
     return(state_prod(honeyproduction, input$state_input, input$prod))
   })
+  
+  output$national_yearly_prod <- renderPlotly({
+    return(national_yearly_prod(honeyproduction, input$col_input))
+  })
 })
