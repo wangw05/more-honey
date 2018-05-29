@@ -2,6 +2,7 @@ library(shiny)
 library(ggplot2)
 library(dplyr)
 library(plotly)
+library(graphics)
 source("scripts/state_yearly_prod.R")
 source("scripts/national_yearly_prod.R")
 

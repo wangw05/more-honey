@@ -52,24 +52,51 @@ national_yearly_prod <- function(df, yaxis_actual, chart_type) {
   df <- clean_data(df, yaxis, chart_type)
 
   # Generating Plotly with bar
-  p <- plot_ly(df,
-    x = ~ year, y = ~ yax, type = chart_type,
-    colors = "Accent", color = ~ year
-  ) %>%
-    layout(
-      title = paste0(
-        "National averages for ",
-        yaxis_actual, " by year"
-      ),
-      yaxis = list(title = yaxis_actual)
-    )
-  p
+  if(chart_type == "bar") {
+    p <- plot_ly(df,
+                 x = ~year, y = ~ yax, type = "bar",
+                 colors = "Accent", color = ~ year
+    ) %>%
+      layout(
+        title = paste0(
+          "National averages for ",
+          yaxis_actual, " by year"
+        ),
+        yaxis = list(title = yaxis_actual)
+      )
+    p
+  } else if(chart_type == "box") {
+    p <- plot_ly(df,
+                 x = ~year, y = ~ yax, type = "box",
+                 colors = "Accent", color = ~year
+    ) %>%
+      layout(
+        title = paste0(
+          "National averages for ",
+          yaxis_actual, " by year"
+        ),
+        yaxis = list(title = yaxis_actual)
+      )
+    p
+  } else if(chart_type == "quant") {
+    ggplotly(qplot(year, yax, data = df,
+          xlab = 'Year', ylab = yaxis_actual, geom = c("point", "smooth"), col = year))
+  } else if(chart_type == "violin") {
+    p <- plot_ly(df, x = ~year, y = ~yax, split = ~year, type = 'violin', box = list(visible = T),
+    meanline = list(visible = T)) %>% 
+      layout(xaxis = list(title = "Year"))
+    print(p)
+  } else {
+    
+  }
+  
 }
 
 # Test code remove after testing.
-#national_yearly_prod(df, "Price/Pound")
+national_yearly_prod(df, "Price/Pound", "violin")
 
 
 # Issues that need resolving:
 # 1. Color bar legend needs to be named and categorized.
 # 4. Build different charts, and make them interchangable.
+# 5. Box plot colors need to be changed.
