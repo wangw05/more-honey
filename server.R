@@ -15,26 +15,6 @@ shinyServer(function(input, output) {
       subset(honeyproduction, honeyproduction$year == input$selectedYear)
   })
 
-  output$interactive_plot <- renderPlot({
-    if (input$state_select == "all") {
-      df <- group_by(honeyproduction, year) %>%
-        summarise(yearly_prod = sum(totalprod))
-      chart <- ggplot(
-        data = df,
-        aes(x = year, y = yearly_prod)
-      ) + geom_line(stat = "identity")
-    } else {
-      df <- filter(honeyproduction, state == input$state_select)
-      chart <- ggplot(
-        data = df,
-
-        aes(x = year, y = totalprod)
-      ) + geom_line(stat = "identity")
-    }
-
-    chart
-  })
-
   output$state_yearly_prod <- renderPlotly({
     return(state_prod(honeyproduction, input$state_input, input$prod))
   })

@@ -48,25 +48,6 @@ shinyUI(navbarPage(
     "Interactive Plot",
     sidebarLayout(
       sidebarPanel(
-        selectInput("state_select",
-          label = h3("State"),
-          choices = c(
-            "Display All" = "all",
-            distinct(honeyproduction, state)
-          ),
-          selected = "all"
-        )
-      ),
-      mainPanel(
-        plotOutput("interactive_plot")
-      )
-    )
-  ),
-
-  tabPanel(
-    "Interactive Plot 2",
-    sidebarLayout(
-      sidebarPanel(
         selectInput("state_input",
           label = h3("State"),
           choices = distinct(honeyproduction, state)
