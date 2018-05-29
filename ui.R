@@ -84,7 +84,13 @@ shinyUI(navbarPage(
                       "Price/Pound",
                       "Production Value"
                     )
-        )
+        ),
+        radioButtons(inputId = "chart_type",
+                     label = "Plot Type",
+                     choices = c("Barplot" = "bar",
+                                 "Boxplot" = "box",
+                                 "Quantile" = "quant",
+                                 "Violin" = "violin"))
       ),
       mainPanel(
         plotlyOutput("national_yearly_prod")
