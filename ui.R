@@ -2,6 +2,7 @@ library(shiny)
 library(plotly)
 library(shinythemes)
 library(dplyr)
+library(graphics)
 
 honeyproduction <-
   read.csv("./data/honeyproduction.csv", stringsAsFactors = FALSE)
