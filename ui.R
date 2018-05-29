@@ -78,11 +78,11 @@ shinyUI(navbarPage(
                     label = h3("Variable"),
                     # ISS: need to change this name. 
                     choices = list(
-                      "Number of Colonies" = "numcol",
-                      "Yield per Colony" = "yieldpercol",
-                      "Total Production" = "totalprod",
-                      "Price/Pound" = "priceperlb",
-                      "Production Value" = "prodvalue"
+                      "Number of Colonies",
+                      "Yield per Colony",
+                      "Total Production",
+                      "Price/Pound",
+                      "Production Value"
                     )
         )
       ),
