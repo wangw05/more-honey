@@ -28,4 +28,11 @@ p {
   margin: auto;
 }
 
+.navbar{
+  background-color: black;
+}
+
+.navbar-default .navbar-brand{
+  color: yellow;
+}
 
