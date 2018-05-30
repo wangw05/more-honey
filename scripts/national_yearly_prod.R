@@ -100,3 +100,4 @@ national_yearly_prod(df, "Price/Pound", "violin")
 # 1. Color bar legend needs to be named and categorized.
 # 4. Build different charts, and make them interchangable.
 # 5. Box plot colors need to be changed.
+

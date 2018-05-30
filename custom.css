@@ -1,0 +1,30 @@
+@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+
+body {
+  background-image: url("https://media.daysoftheyear.com/20171223125524/honey-month.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  
+}
+h1 {
+  font-family: 'Lobster', cursive;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #ad1d28;
+}
+
+p {
+  display: table;
+  margin: auto;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.myContent{
+  background-color: rgba(255, 255, 255, .5);
+  padding: 20px;
+  margin: auto;
+}
+
+
