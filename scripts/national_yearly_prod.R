@@ -1,9 +1,10 @@
 library(plotly)
 library(dplyr)
 library(RColorBrewer)
+# install.packages(devtools::install_github("ropensci/plotly"))
 
 # Test Data: Delete after Complete
-df <- read.csv("./data/honeyproduction.csv", stringsAsFactors = FALSE)
+# df <- read.csv("./data/honeyproduction.csv", stringsAsFactors = FALSE)
 
 # Generate input dataframe for colnames
 names_df <- data.frame(c(
@@ -27,15 +28,15 @@ colnames(names_df) <- c("actual", "column")
 
 # Support function for cleaning data
 clean_data <- function(df, yaxis, chart_type) {
-  
+
   # Calculating yearly avgs, and making new df
-  if(chart_type == "bar") {
+  if (chart_type == "bar") {
     df <- df %>%
-    select(-state) %>%
-    group_by(year) %>%
-    summarise_all(mean)
+      select(-state) %>%
+      group_by(year) %>%
+      summarise_all(mean)
   }
-  
+
   df2 <- df %>% select(year, yaxis)
 
   colnames(df2) <- c("year", "yax")
@@ -52,52 +53,70 @@ national_yearly_prod <- function(df, yaxis_actual, chart_type) {
   df <- clean_data(df, yaxis, chart_type)
 
   # Generating Plotly with bar
-  if(chart_type == "bar") {
+  if (chart_type == "bar") {
     p <- plot_ly(df,
-                 x = ~year, y = ~ yax, type = "bar",
-                 colors = "Accent", color = ~ year
+      x = ~ year, y = ~ yax, type = "bar",
+      colors = "Accent", color = ~ year, hoverinfo = "text",
+      text = ~ paste0(
+        "Year: ", year,
+        "<br>", yaxis_actual, ": ",
+        round(yax, digits = 2)
+      )
     ) %>%
       layout(
         title = paste0(
           "National averages for ",
           yaxis_actual, " by year"
         ),
-        yaxis = list(title = yaxis_actual)
+        yaxis = list(title = yaxis_actual),
+        xaxis = list(title = "Year")
       )
     p
-  } else if(chart_type == "box") {
+  } else if (chart_type == "box") {
     p <- plot_ly(df,
-                 x = ~year, y = ~ yax, type = "box",
-                 colors = "Accent", color = ~year
+      x = ~ year, y = ~ yax, type = "box",
+      colors = "Accent", color = ~ year
     ) %>%
       layout(
         title = paste0(
           "National averages for ",
           yaxis_actual, " by year"
         ),
-        yaxis = list(title = yaxis_actual)
+        yaxis = list(title = yaxis_actual),
+        xaxis = list(title = "Year")
       )
     p
-  } else if(chart_type == "quant") {
-    ggplotly(qplot(year, yax, data = df,
-          xlab = 'Year', ylab = yaxis_actual, geom = c("point", "smooth"), col = year))
-  } else if(chart_type == "violin") {
-    p <- plot_ly(df, x = ~year, y = ~yax, split = ~year, type = 'violin', box = list(visible = T),
-    meanline = list(visible = T)) %>% 
-      layout(xaxis = list(title = "Year"))
-    print(p)
+  } else if (chart_type == "quant") {
+    ggplotly(qplot(year, yax,
+      data = df,
+      xlab = "Year", ylab = yaxis_actual,
+      geom = c("point", "smooth"), col = year
+    ))
+  } else if (chart_type == "violin") {
+    p <- plot_ly(df,
+      x = ~ year, y = ~ yax, split = ~ year,
+      type = "violin", box = list(visible = T),
+      meanline = list(visible = T)
+    ) %>%
+      layout(
+        xaxis = list(title = "Year"),
+        yaxis = list(title = yaxis_actual),
+        title = paste0(
+          "National averages for ",
+          yaxis_actual, " by year"
+        )
+      )
+    p
   } else {
-    
+
   }
-  
 }
 
 # Test code remove after testing.
-national_yearly_prod(df, "Price/Pound", "violin")
+# national_yearly_prod(df, "Price/Pound", "violin")
 
 
 # Issues that need resolving:
 # 1. Color bar legend needs to be named and categorized.
 # 4. Build different charts, and make them interchangable.
 # 5. Box plot colors need to be changed.
-
