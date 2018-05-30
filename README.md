@@ -4,4 +4,4 @@ Hello! Welcome to our INFO 201 final project! In this application, we will be lo
 
 Please note that you will have to install the dev version of Plotly for one of our plots to work. You can install it by running this line: `install.packages(devtools::install_github("ropensci/plotly"))`
 
-Here is a link to our final project: 
+Here is a link to our final project: [Link](https://wangw05.shinyapps.io/more-honey/)
