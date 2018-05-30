@@ -41,8 +41,7 @@ state_prod <- function(df, sta, prod) {
   p <- plot_ly(df, type = "scatter", mode = "lines") %>%
     layout(
       xaxis = list(title = "Year"), yaxis = list(title = "Count"),
-      title = paste0("Honey Production by year in ", sta),
-      legend = list(orientation = "h")
+      title = paste0("Honey Production by year in ", sta)
     )
 
   # Filtering data for prod, stock, or both

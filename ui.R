@@ -193,7 +193,7 @@ shinyUI(navbarPage(
     "Raw Data",
     div(
       class = "myContent",
-      titlePanel("Download Data"),
+      titlePanel("View Data"),
       sidebarLayout(
         sidebarPanel(
           selectInput("selectedYear",
