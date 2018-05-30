@@ -25,8 +25,8 @@ shinyUI(navbarPage(
       p(
         "In this project, we have utilized the dataset from",
         url <- a("Honey Production in the USA",
-          href = "https://www.kaggle.com/
-                 jessicali9530/honey-production/data"
+          href = 
+            "https://www.kaggle.com/jessicali9530/honey-production/data"
         ), ".",
         "This dataset shows honey production numbers
         and prices by state from 1998 to 2012.
