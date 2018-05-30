@@ -200,11 +200,12 @@ shinyUI(navbarPage(
         Production is decreasing over time while the Production Value is 
         increasing from 1998 to 2012 in general. The following graph 
         illustrates this comparison of Total Production and Production Value 
-        in Florida as an example for the whole country."),
+        totaled for all states. To see this comparison for individual states,
+        go to the ", strong("Honey Production by Year"), "tab."),
 
       # Florida total production vs. production value chart
       img(
-        width = 1000, height = 500, src = "honey-production-FL.png",
+        width = 1000, height = 500, src = "total-honey-production.png",
         style = "margin-left:180px"
       ),
       p("In the ", strong("National Averages by Year"), " plot, we take the 
