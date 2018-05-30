@@ -35,7 +35,14 @@ add_val <- function(plot) {
 # Function to return state yearly honey production
 state_prod <- function(df, sta, prod) {
   # Filtering data to only one state
-  df <- df %>% filter(state == sta)
+  if (sta == "all states") {
+    df <- df %>% group_by(year) %>%
+          summarise(totalprod = sum(totalprod), 
+                    prodvalue = sum(prodvalue), 
+                    priceperlb = sum(priceperlb))
+  } else {
+    df <- df %>% filter(state == sta)
+  }
 
   # Generate empty Plotly
   p <- plot_ly(df, type = "scatter", mode = "lines") %>%
@@ -46,14 +53,14 @@ state_prod <- function(df, sta, prod) {
 
   # Filtering data for prod, stock, or both
   if (prod == "all") {
-    df <- df %>% select(state, totalprod, prodvalue, year)
+    df <- df %>% select(totalprod, prodvalue, year)
     p <- add_prod(p)
     p <- add_val(p)
   } else if (prod == "price") {
-    df <- df %>% select(state, prodvalue, year)
+    df <- df %>% select(prodvalue, year)
     p <- add_val(p)
   } else {
-    df <- df %>% select(state, prodvalue, year)
+    df <- df %>% select(prodvalue, year)
     p <- add_prod(p)
   }
 
