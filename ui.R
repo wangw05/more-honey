@@ -50,8 +50,19 @@ shinyUI(navbarPage(
         that buy honey from the honey farmers
           and then resell it as this data will be most useful for them."
       ),
-      p("The", strong("\"Table\""), "page will provide users
-        the ability to find and view the data we used from 1998 to 2012."),
+      p("The", strong("\"Honey Production by Year\""), "page allows users
+        to select a state and either the total production, production 
+        value, or both, and see the selected data graphed by year.  
+        The", strong("\"National Averages by Year\""), "page allows users 
+        to select a data type and type of plot and graphs
+        the national averages of the selected data type by year."),
+      p("The", strong("\"Analysis\""), "page includes an in depth analysis 
+        of the data displayed in both the", strong("\"Honey Production by 
+        Year\""), "page, and the", strong("\"National Averages by Year\""), 
+        "page, relating the data to real-life trends and news in the U.S. 
+        honey industry.  Finally, the", strong("\"Raw Data\""), "page 
+        allows the ability to find and view the entire raw dataset we used 
+        from 1998 to 2012."),
       width = 12
     ),
     headerPanel(
@@ -65,7 +76,7 @@ shinyUI(navbarPage(
   ),
 
   tabPanel(
-    "Interactive Plot",
+    "Honey Production by Year",
     div(
       class = "myContent",
       sidebarLayout(
@@ -91,7 +102,7 @@ shinyUI(navbarPage(
   ),
 
   tabPanel(
-    "Interactive Plot 2",
+    "National Averages by Year",
     div(
       class = "myContent",
       sidebarLayout(
@@ -128,7 +139,7 @@ shinyUI(navbarPage(
   tabPanel(
     "Analysis",
     headerPanel(
-      h1("Introduction and Data Analysis", align = "center")
+      h1("Data Analysis", align = "center")
     ),
     mainPanel(
       p("This dataset a visualized way to understand the trend
@@ -179,7 +190,7 @@ shinyUI(navbarPage(
     )
   ),
   tabPanel(
-    "Table",
+    "Raw Data",
     div(
       class = "myContent",
       titlePanel("Download Data"),
