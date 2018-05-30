@@ -33,7 +33,11 @@ p {
 }
 
 .navbar-default .navbar-brand{
-  color: #fff760;
+  color: #e8e058;
   opacity: 1.0;
   box-shadow: none;
+}
+
+.navbar-default .navbar-nav>li>a{
+  color: #e8e058 !important;
 }
