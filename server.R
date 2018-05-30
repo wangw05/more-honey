@@ -20,8 +20,13 @@ shinyServer(function(input, output) {
       "Total Production" = totalprod, "Stocks" = stocks,
       "Price/lb " = priceperlb, "Production Value" = prodvalue, "Year" = year
     )
-    year_filter <-
-      subset(honeyproduction, honeyproduction$Year == input$selectedYear)
+    
+    if (input$selectedYear == "all") {
+      year_filter <- honeyproduction
+    } else {
+      year_filter <-
+        subset(honeyproduction, honeyproduction$Year == input$selectedYear)
+    }
   })
 
   # Honey Production by Year plot

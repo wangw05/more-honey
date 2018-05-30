@@ -89,6 +89,18 @@ shinyUI(navbarPage(
     "Honey Production by Year",
     div(
       class = "myContent",
+      
+      # Title and Description
+      headerPanel(
+        h1("Honey Production by Year", align = "center")
+      ),
+      br(),
+      p("Select a state to see the honey production for that state
+        graphed over time.  Select either ", em("Total Production"), ",",
+        em("Production Value"), ", or both to see the data for total
+        production, production value, or both together."),
+      br(),
+      
       sidebarLayout(
         sidebarPanel(
 
@@ -122,13 +134,23 @@ shinyUI(navbarPage(
     "National Averages by Year",
     div(
       class = "myContent",
+      
+      # Title and Description
+      headerPanel(
+        h1("National Averages by Year", align = "center")
+      ),
+      br(),
+      p("Select a data type to see the national average for that data
+        type over time.  Select a plot type to see the data plotted
+        in different ways."),
+      br(),
+      
       sidebarLayout(
         sidebarPanel(
 
           # Input for data type
           selectInput("col_input",
-            label = h3("Variable"),
-            # ISS: need to change this name.
+            label = h3("Data Type"),
             choices = list(
               "Number of Colonies",
               "Yield per Colony",
@@ -292,12 +314,25 @@ shinyUI(navbarPage(
     "Raw Data",
     div(
       class = "myContent",
-      titlePanel("View Data"),
+      
+      # Title and Description
+      headerPanel(
+        h1("Raw Data", align = "center")
+      ),
+      br(),
+      p("Select a year to see the raw data from that year or select ",
+        em("Display all"), "to see all of the data.  Click on a column
+        to sort by that column or use the search bar to find a specific
+        data entry."),
+      br(),
+      
+      # Data Table
       sidebarLayout(
         sidebarPanel(
           selectInput("selectedYear",
             label = "Year:",
-            choices = honeyproduction$year
+            choices = c("Display all" = "all", honeyproduction$year),
+            selected = "all"
           )
         ),
 
