@@ -9,8 +9,8 @@ honeyproduction <-
 
 shinyUI(navbarPage(
   theme = "custom.css",
-  id = "navbar",
   "Honey Production in the U.S.",
+  id = "navbar",
 
   # About tab
   tabPanel(

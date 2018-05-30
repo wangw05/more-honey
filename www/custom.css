@@ -11,7 +11,7 @@ h1 {
   font-family: 'Lobster', cursive;
   font-weight: 500;
   line-height: 1.1;
-  color: navy;
+  color: black;
 }
 
 p {
@@ -34,5 +34,6 @@ p {
 
 .navbar-default .navbar-brand{
   color: #fff760;
+  opacity: 1.0;
+  box-shadow: none;
 }
-
