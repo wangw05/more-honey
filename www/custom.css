@@ -34,10 +34,17 @@ p {
 
 .navbar-default .navbar-brand{
   color: #e8e058;
-  opacity: 1.0;
-  box-shadow: none;
+  pointer-events:none;
 }
 
 .navbar-default .navbar-nav>li>a{
-  color: #e8e058 !important;
+  color: #e8e058;
+}
+
+.navbar-default .navbar-nav>li.active>a{
+  color: black;
+}
+
+.navbar-default .navbar-nav>li:hover>a{
+  color: white;
 }
