@@ -145,51 +145,97 @@ shinyUI(navbarPage(
     mainPanel(
       p("This dataset a visualized way to understand the trend
         of US honey production throughout years."),
-      p("In Interactive 1, users is able to select and see the Total
-        Production and Production Value of each state. From the oberservation,
-        we found that the Total Production is decreasing while the Production
-        Value is increasing from 1998 to 2012 in general. The following is
-        the comparion of Total Production and Production Value in Florida."),
+      p("In the ", strong("Honey Production by Year"), " plot, users are able to 
+        select and see the Total Production and Production Value of each state. 
+        Analyzing this interactive graph, we found that the Total Production is 
+        decreasing over time while the Production Value is increasing from 1998 
+        to 2012 in general. The following graph illustrates this comparison of 
+        Total Production and Production Value in Florida as an example for the
+        whole country."),
       img(
         width = 1000, height = 500, src = "honey-production-FL.png",
         style = "margin-left:180px"
       ),
-      p("In Interactive Plot 2, we take the average number of
-        each variable from every state, provided 5 national average variables
-        related to honey production- Number of Colonies, Yield per Colony,
-        Total Production, Price/ Pound, and Production Value."),
-      p("According to the observation, there is not too much change for
+      p("In the ", strong("National Averages by Year"), " plot, we take the 
+        average number of each variable from every state and provide 5 
+        national average variables related to honey production- 
+        Number of Colonies, Yield per Colony,
+        Total Production, Price/Pound, and Production Value."),
+      p("According to the graph, there is not too much change for
         the nuumber of colonies through the years."),
       img(
         width = 1000, height = 500, src = "number-of-colonies.png",
         style = "margin-left:180px"
       ),
-      p("The yield per colony has slightly decreased."),
-      img(
-        width = 1000, height = 500, src = "yield-colony.png",
-        style = "margin-left:180px"
+      p("Compare this to the decrease of yield per colony and total production,
+        where the average total production experiences a much greater 
+        decrease from 1998 to 2012. This shows that despite no decrease in 
+        the number of be colonies in the United States, there has been a 
+        significant decrease in the total yield of honey. This explains the 
+        huge increase in demand, especially from fruit, nut, and vegetable 
+        growers, who need the bees to pollinate their crops. One example of
+        this is ", a("almond growers", href = 
+                       "https://s.giannini.ucop.edu/uploads/giannini_public/cb/7c/cb7c1177-c7d2-44df-a5a8-8aad2f3ed858/v14n5_4.pdf"),
+        ", who are spending an additional $83 million a year on pollination,
+        causing an increase in almond prices. Therefore, you can see that the 
+        bee industry has a cascading effect on the prices of other crops that
+        depend on their pollination."),
+      div(
+        img(
+          width = 500, height = 250, src = "yield-colony.png",
+          style = "display:inline-block"
+        ),
+        img(
+          width = 500, height = 250, src = "total-production.png",
+          style = "display:inline-block"
+        ), style = "text-align:center"),
+      p("Along with the demand hike comes an increase in price per pound and 
+        production value, as displayed by the below graphs.  This data
+        explains why honey is becoming more expensive for retail stores who
+        buy the honey from farmers and farming companies."),
+      div(
+        img(
+          width = 500, height = 250, src = "price-pound.png",
+          style = "display:inline-block"
+        ),
+        img(
+          width = 500, height = 250, src = "production-value.png",
+          style = "display:inline-block"
+        ), style = "text-align:center"),
+      p("Something these retailers might want to know is ", em("why"),
+        "they are experiencing these price hikes.  From the data you can see
+        that bee colonies are experiencing less yeild per colony despite a
+        relatively constant total number of colonies. This decrease in yeild
+        comes from what's called ", em("Colony Collapse Disorder"), "."
       ),
-      p("Compare to the decrease of yield per colony, the average
-        total production has a greater decreasing especially from
-        1998 to 2002. But the average total production is relatively
-        constant after 2002."),
-      img(
-        width = 1000, height = 500, src = "total-production.png",
-        style = "margin-left:180px"
+      p(a("Colony Collapse Disorder", 
+          href = "https://fas.org/sgp/crs/misc/RL33938.pdf"),
+        " is essentially when bees leave the hive to find food and don't
+        come back, causing the remaining hive to collapse. Researchers
+        aren't sure where this disorder comes from but they believe
+        insecticides are at least partially to blame. Our data shows
+        the drastic effect this has had on the industry and ",
+        a("additional research", 
+          href = 
+  "https://www.nytimes.com/2017/02/16/business/a-bee-mogul-confronts-the-crisis-in-his-field.html"),
+        "shows the cost this has had on the industry and the entire
+        U.S. farming industry."
       ),
-      p("The Price per Pound and Production Value have been increased
-        a lot from 1998 to 2012, and reach the peaks in 2012."),
-      img(
-        width = 1000, height = 500, src = "price-pound.png",
-        style = "margin-left:180px"
-      ),
-      img(
-        width = 1000, height = 500, src = "production-value.png",
-        style = "margin-left:180px"
+      p("Global concern over this collapse started in 2006 when these
+        prices experienced the greatest increase. It took a long time
+        for action to be taken, but in 2014, President Obama created
+        a", strong("Bee and Pollinator Task Force"), "to study and
+        find solutions to bee colony collapses.  The EPA prohibited 
+        approval of any use of unapproved neonicotinoid pesticides
+        to try and prevent further bee colony collapse.  However,
+        the government has been slow to respond and has yet to find a
+        solution. Some industries are still recovering from the most
+        extreme collapse over 12 years ago, and the U.S. honey industry
+        is still largely struggling as the U.S. now looks to import
+        much of its honey from overseas."
       ),
       width = 12
-    )
-  ),
+    )),
   tabPanel(
     "Raw Data",
     div(
