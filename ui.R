@@ -8,7 +8,7 @@ honeyproduction <-
   read.csv("./data/honeyproduction.csv", stringsAsFactors = FALSE)
 
 shinyUI( navbarPage(
-  theme = "",
+  theme = shinytheme("cosmo"),
   "Honey Production in the U.S.",
   # intro page
   includeCSS("custom.css"),
