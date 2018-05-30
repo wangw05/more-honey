@@ -11,18 +11,19 @@ h1 {
   font-family: 'Lobster', cursive;
   font-weight: 500;
   line-height: 1.1;
-  color: #ad1d28;
+  color: navy;
 }
 
 p {
   display: table;
   margin: auto;
   padding: 5px;
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .7);
+  color: black;
 }
 
 .myContent{
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .7);
   padding: 20px;
   margin: auto;
 }
