@@ -107,7 +107,8 @@ shinyUI(navbarPage(
           # Input for State
           selectInput("state_input",
             label = h3("State"),
-            choices = distinct(honeyproduction, state)
+            choices = c("Display all" = "all states", 
+                        distinct(honeyproduction, state))
           ),
 
           # Input for type of production
