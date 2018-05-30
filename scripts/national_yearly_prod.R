@@ -3,9 +3,6 @@ library(dplyr)
 library(RColorBrewer)
 # install.packages(devtools::install_github("ropensci/plotly"))
 
-# Test Data: Delete after Complete
-# df <- read.csv("./data/honeyproduction.csv", stringsAsFactors = FALSE)
-
 # Generate input dataframe for colnames
 names_df <- data.frame(c(
   "Number of Colonies",
@@ -111,12 +108,3 @@ national_yearly_prod <- function(df, yaxis_actual, chart_type) {
 
   }
 }
-
-# Test code remove after testing.
-# national_yearly_prod(df, "Price/Pound", "violin")
-
-
-# Issues that need resolving:
-# 1. Color bar legend needs to be named and categorized.
-# 4. Build different charts, and make them interchangable.
-# 5. Box plot colors need to be changed.

@@ -185,8 +185,10 @@ shinyUI(navbarPage(
       titlePanel("Download Data"),
       sidebarLayout(
         sidebarPanel(
-          selectInput("selectedYear", label = "Year:",
-                      choices = honeyproduction$year)
+          selectInput("selectedYear",
+            label = "Year:",
+            choices = honeyproduction$year
+          )
         ),
 
         mainPanel(
