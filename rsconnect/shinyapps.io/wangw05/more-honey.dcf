@@ -5,8 +5,8 @@ account: wangw05
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 351417
-bundleId: 1401548
+bundleId: 1401591
 url: https://wangw05.shinyapps.io/more-honey/
-when: 1527718723.66412
+when: 1527720101.27182
 asMultiple: FALSE
 asStatic: FALSE
