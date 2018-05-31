@@ -39,7 +39,7 @@ state_prod <- function(df, sta, prod) {
     df <- df %>% group_by(year) %>%
           summarise(totalprod = sum(totalprod), 
                     prodvalue = sum(prodvalue), 
-                    priceperlb = sum(priceperlb))
+                    priceperlb = round(mean(priceperlb), digits = 2))
   } else {
     df <- df %>% filter(state == sta)
   }
